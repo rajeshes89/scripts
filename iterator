@@ -1,0 +1,47 @@
+class Squares(object):
+    """Class to implement an iterator
+    of squares of integers"""
+
+    def __init__(self, max = 0):
+        self.max = max
+        self.min=1
+
+    def __iter__(self):
+        return self
+
+    def next(self):
+        if self.min <= self.max:
+            result = self.min ** 2
+            self.min += 1
+            return result
+        else:
+            raise StopIteration
+
+
+for square in Squares(50):
+    print square
+
+
+#Another iterator
+
+class Mymonth(object):
+    str='JFMAMJJASOND'
+    def __init__(self):
+        self.counter=-1
+    def __iter__(self):
+        return iter(Mymonth.str)
+    def next(self):
+        if self.counter < len(Mymonth.str):
+            self.counter+=1
+            return Mymonth.str[self.counter]    
+        else:
+            raise StopIteration
+			
+a=Mymonth()
+print a.next()
+print a.next()
+print a.next()
+print a.next()
+print '+'*80
+for x in a:
+	print x
