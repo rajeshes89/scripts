@@ -1,3 +1,5 @@
+
+## Checking how the fork works! 
 class Squares(object):
     """Class to implement an iterator
     of squares of integers"""
